@@ -23,4 +23,16 @@ const getApiData = async () => {
   return generos;
 }
 
-getApiData().then(info => console.log(info));
+exports.getAllGenres = async (limitOfGenres = 62) => {
+  let genres = [];
+
+  let apiData = await axios.get(`https://kitsu.io/api/edge/genres?page[limit]=${limitOfGenres}&page[offset]=0`);
+  apiData = apiData.data.data;
+
+  genres = apiData.map(genre => {
+      return {id: genre.id, name: genre.attributes.name}
+  })
+
+  return genres
+}
+// getApiData().then(info => console.log(info));
