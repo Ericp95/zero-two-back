@@ -5,78 +5,70 @@ module.exports = (sequelize) => {
   sequelize.define( 'animes',
    
     {
-     id:{
+    	id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-     },
-     userCount:{
-
-        type:DataTypes.INTEGER,
-     }, 
-     name:{
+     	},
+     	name:{
         type:DataTypes.TEXT,
         allowNull: false,
-     },
-     synopsis:{
+      },
+      userCount:{
+         type:DataTypes.INTEGER,
+      }, 
+     	synopsis:{
         type:DataTypes.TEXT,
-     },
-     titles:{
-        type:DataTypes.STRING(50),
-        allowNull: false,
-     },
-     averageRating:{
+     	},
+     	averageRating:{
         type:DataTypes.FLOAT,
-     },
-     favoriteCount:{
+     	},
+     	favoritesCount:{
         type:DataTypes.INTEGER,
 
-     },
-     startDate:{
+     	},
+     	startDate:{
         type:DataTypes.DATE,
-     },
-     endDate:{
+     	},
+     	endDate:{
         type:DataTypes.DATE,
-     },
-     popularityRank:{
+     	},
+     	popularityRank:{
         type:DataTypes.INTEGER,
-     },
-     ratingRank:{
+     	},
+     	ratingRank:{
         type:DataTypes.INTEGER,
-     },
-     status:{
-        type:DataTypes.ENUM("conectado", "desconectado"),
-     },
-     posterImage:{
-        type:DataTypes.JSONB,
-     },
-     coverImage:{
-        type:DataTypes.JSONB,
-     },
-     episodeCount:{
-        type:DataTypes.INTEGER,
-     },
-     episodeLength:{
-        type:DataTypes.INTEGER,
-     },
-     youtubeVideoId:{
+     	},
+     	status:{
         type:DataTypes.TEXT,
-     },
-     nsfw:{
-        type:DataTypes.TEXT,
-     },
-     /*subtype:{
-        type:DataTypes.ENUM,
-     },
-     showType:{
-        type:DataTypes.ENUM,
-     },*/
-     ageRatingGuide:{
-        type:DataTypes.TEXT,
-     },
-     genre_id:{
+     	},
+     	posterImage:{
+        type:DataTypes.STRING(1234),
+     	},
+     	coverImage:{
+        type:DataTypes.STRING(1234),
+     	},
+     	episodeCount:{
         type:DataTypes.INTEGER,
-     }
+     	},
+    	episodeLength:{
+      	type:DataTypes.INTEGER,
+     	},
+     	youtubeVideoId:{
+        type:DataTypes.TEXT,
+     	},
+     	nsfw:{
+        type:DataTypes.BOOLEAN,
+     	},
+     	subtype:{
+        type:DataTypes.TEXT,
+     	},
+     	showType:{
+        type:DataTypes.TEXT,
+     	},
+     	ageRatingGuide:{
+        type:DataTypes.TEXT,
+     	}
     },
     { timestamps: false }
   );
