@@ -34,7 +34,17 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Animes, Genres, Reviews,Episodes,User} = sequelize.models;
 
  // Aca vendrian las relaciones
-
+ Animes.belongsToMany(Genres, { through: 'anime_genre' });//relacion de muchos a muchos generos y animes
+ Genres.belongsToMany(Animes, { through: 'anime_genre' });  
+ 
+ Animes.belongsToMany(Episodes, { through: 'anime_episodes' });//relacion de muchos a muchos episodios y animes
+ Episodes.belongsToMany(Animes, { through: 'anime_episodes' }); 
+ 
+ Animes.hasMany(Reviews);//relacion de uno a muchos review y animes
+ Reviews.belongsTo(Animes);
+ 
+ User.hasMany(Reviews);//relacion de uno a muchos usuarios y review
+ Reviews.belongsTo(User);
  
  
 module.exports = {
