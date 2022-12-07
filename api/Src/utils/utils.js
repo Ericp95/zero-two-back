@@ -68,4 +68,12 @@ exports.getAllGenres = async (limitOfGenres = 62) => {
     return error.message;
   }
 }
+
+exports.getAllReviews = async () => {
+  return ['Reviews'];
+}
+
+exports.getAllEpisodes = async () => {
+  return ['Reviews'];
+}
 // getApiData().then(info => console.log(info));
